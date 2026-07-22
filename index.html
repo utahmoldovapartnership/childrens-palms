@@ -158,6 +158,21 @@ section{position:relative;padding:4.6rem 0}
 .card h3{font-size:1.32rem;margin-bottom:.5rem;color:var(--ink)}
 .card p{color:var(--ink-soft);font-size:.98rem;font-weight:500}
 
+/* service card FAQ (click a card to expand) */
+.card.has-faq{cursor:pointer}
+.card.has-faq:focus-visible{outline:3px solid var(--green);outline-offset:3px}
+.card.open,.card.open:hover{transform:none;box-shadow:var(--shadow)}
+.svc-toggle{margin-top:1.1rem;display:flex;align-items:center;gap:.6rem;font-weight:800;font-size:.9rem;color:var(--green-deep)}
+.svc-toggle .pm{
+  width:24px;height:24px;border-radius:50%;background:rgba(125,169,79,.16);color:var(--green-deep);
+  display:flex;align-items:center;justify-content:center;font-size:1.1rem;font-weight:600;transition:.3s
+}
+.card.open .svc-toggle .pm{transform:rotate(45deg);background:var(--green);color:#fff}
+.svc-faq{max-height:0;overflow:hidden;transition:max-height .35s ease}
+.svc-faq .sq{margin-top:1rem;padding-top:1rem;border-top:1px solid var(--line)}
+.svc-faq .sq-q{font-family:var(--display);font-weight:700;font-size:1.04rem;color:var(--ink);margin-bottom:.35rem}
+.svc-faq .sq-a{color:var(--ink-soft);font-size:.94rem;font-weight:500;line-height:1.6}
+
 /* booking */
 .book-grid{display:grid;grid-template-columns:1fr 1fr;gap:2.4rem;align-items:start}
 .book-intro h2{font-size:clamp(2rem,3.8vw,2.9rem);margin:.7rem 0 .8rem}
@@ -496,11 +511,15 @@ body.lang-en [lang-en]{display:inline}
 <section id="about">
   <div class="wrap about-grid">
     <div class="reveal photo-frame">
-      <img src="centre.jpg" alt="" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:2" onerror="this.style.display='none'">
+      <img src="photos/entrance.jpg" alt=""
+           data-alt-ru="Вход в центр детского развития «Детские Ладошки» в Кишинёве"
+           data-alt-ua="Вхід до центру дитячого розвитку «Дитячі Долоньки» в Кишиневі"
+           data-alt-en="The entrance to the Children's Palms development centre in Chișinău"
+           style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:2" onerror="this.style.display='none'">
       <div class="ph-label">
         <svg width="56" height="56" viewBox="0 0 24 24" fill="none"><path d="M4 7h3l1.5-2h7L17 7h3v12H4z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/><circle cx="12" cy="13" r="3.4" stroke="currentColor" stroke-width="1.6"/></svg>
-        <small lang-ru>Фото центра</small><small lang-ua>Фото центру</small><small lang-en>Centre photo</small>
-        <small style="opacity:.8">centre.jpg</small>
+        <small lang-ru>Вход в центр</small><small lang-ua>Вхід до центру</small><small lang-en>Centre entrance</small>
+        <small style="opacity:.8">photos/entrance.jpg</small>
       </div>
     </div>
     <div class="reveal">
@@ -686,47 +705,47 @@ body.lang-en [lang-en]{display:inline}
       <p><span lang-ru>Направления развития, подобранные под потребности каждого ребёнка.</span><span lang-ua>Напрями розвитку, дібрані під потреби кожної дитини.</span><span lang-en>Areas of development, tailored to the needs of each child.</span></p>
     </div>
     <div class="cards">
-            <div class="card reveal">
+            <div class="card reveal" data-svc="logoped">
         <div class="cic" style="background:var(--green)"><svg width="26" height="26" viewBox="0 0 24 24" fill="none"><path d="M4 5h16v10H8l-4 4V5z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><path d="M8 9h8M8 12h5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></div>
         <h3><span lang-ru>Логопед</span><span lang-ua>Логопед</span><span lang-en>Speech therapy</span></h3>
         <p><span lang-ru>Постановка и коррекция звуков, развитие связной речи и словарного запаса в игровой форме.</span><span lang-ua>Постановка та корекція звуків, розвиток зв’язного мовлення і словникового запасу в ігровій формі.</span><span lang-en>Setting and correcting sounds, building fluent speech and vocabulary through play.</span></p>
       </div>
-      <div class="card reveal">
+      <div class="card reveal" data-svc="defectolog">
         <div class="cic" style="background:var(--blue)"><svg width="26" height="26" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="2"/><path d="M12 7v5l3 2" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
         <h3><span lang-ru>Дефектолог</span><span lang-ua>Дефектолог</span><span lang-en>Defectology</span></h3>
         <p><span lang-ru>Развитие познавательных навыков, внимания и памяти для детей, которым нужна особая поддержка.</span><span lang-ua>Розвиток пізнавальних навичок, уваги та пам’яті для дітей, яким потрібна особлива підтримка.</span><span lang-en>Developing cognitive skills, attention and memory for children who need extra support.</span></p>
       </div>
-      <div class="card reveal">
+      <div class="card reveal" data-svc="neuro">
         <div class="cic" style="background:var(--lav)"><svg width="26" height="26" viewBox="0 0 24 24" fill="none"><path d="M12 3v18M5 8c4-3 10-3 14 0" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
         <h3><span lang-ru>Нейрогимнастика</span><span lang-ua>Нейрогімнастика</span><span lang-en>Neurogymnastics</span></h3>
         <p><span lang-ru>Упражнения для развития межполушарного взаимодействия, концентрации и саморегуляции.</span><span lang-ua>Вправи для розвитку міжпівкульної взаємодії, концентрації та саморегуляції.</span><span lang-en>Exercises that develop cross-hemisphere coordination, focus and self-regulation.</span></p>
       </div>
-      <div class="card reveal">
+      <div class="card reveal" data-svc="senso">
         <div class="cic" style="background:var(--teal)"><svg width="26" height="26" viewBox="0 0 24 24" fill="none"><path d="M4 18h16M6 18c0-4 2-7 6-7s6 3 6 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><circle cx="12" cy="6" r="2.5" stroke="currentColor" stroke-width="2"/></svg></div>
         <h3><span lang-ru>Сенсомоторика</span><span lang-ua>Сенсомоторика</span><span lang-en>Sensorimotor development</span></h3>
         <p><span lang-ru>Развитие движений, координации и сенсорного восприятия через игру и тактильный опыт.</span><span lang-ua>Розвиток рухів, координації та сенсорного сприйняття через гру й тактильний досвід.</span><span lang-en>Building movement, coordination and sensory perception through play and tactile experience.</span></p>
       </div>
-      <div class="card reveal">
+      <div class="card reveal" data-svc="school">
         <div class="cic" style="background:var(--orange)"><svg width="26" height="26" viewBox="0 0 24 24" fill="none"><path d="M12 3l9 5-9 5-9-5 9-5z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><path d="M5 11v4c0 1.5 3 3 7 3s7-1.5 7-3v-4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
         <h3><span lang-ru>Подготовка к школе</span><span lang-ua>Підготовка до школи</span><span lang-en>School readiness</span></h3>
         <p><span lang-ru>Чтение, письмо, мышление и уверенность — всё, что поможет ребёнку легко начать школьную жизнь.</span><span lang-ua>Читання, письмо, мислення та впевненість — усе, що допоможе дитині легко почати шкільне життя.</span><span lang-en>Reading, writing, thinking and confidence — everything for a smooth start to school.</span></p>
       </div>
-      <div class="card reveal">
+      <div class="card reveal" data-svc="sand">
         <div class="cic" style="background:var(--green-deep)"><svg width="26" height="26" viewBox="0 0 24 24" fill="none"><path d="M12 3v4M12 17v4M3 12h4M17 12h4M6 6l2.5 2.5M15.5 15.5L18 18M18 6l-2.5 2.5M8.5 15.5L6 18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></div>
         <h3><span lang-ru>Песочная терапия</span><span lang-ua>Піскова терапія</span><span lang-en>Sand therapy</span></h3>
         <p><span lang-ru>Игры с песком помогают снять напряжение, развить моторику и выразить эмоции.</span><span lang-ua>Ігри з піском допомагають зняти напругу, розвинути моторику та виразити емоції.</span><span lang-en>Play with sand relieves tension, builds fine motor skills and helps express emotions.</span></p>
       </div>
-      <div class="card reveal">
+      <div class="card reveal" data-svc="plasticine">
         <div class="cic" style="background:var(--blue-deep)"><svg width="26" height="26" viewBox="0 0 24 24" fill="none"><rect x="4" y="4" width="16" height="16" rx="3" stroke="currentColor" stroke-width="2"/><path d="M8 14c1.5-3 6.5-3 8 0" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><circle cx="9" cy="9" r="1.2" fill="currentColor"/><circle cx="15" cy="9" r="1.2" fill="currentColor"/></svg></div>
         <h3><span lang-ru>Пластилинография</span><span lang-ua>Пластилінографія</span><span lang-en>Plasticine art</span></h3>
         <p><span lang-ru>Лепка и рисование пластилином для развития мелкой моторики, фантазии и речи.</span><span lang-ua>Ліплення та малювання пластиліном для розвитку дрібної моторики, фантазії та мовлення.</span><span lang-en>Modelling and drawing with plasticine to develop fine motor skills, imagination and speech.</span></p>
       </div>
-      <div class="card reveal">
+      <div class="card reveal" data-svc="finance">
         <div class="cic" style="background:var(--coral)"><svg width="26" height="26" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="8" stroke="currentColor" stroke-width="2"/><path d="M12 8v8M9.5 10c0-1.1 1.1-1.6 2.5-1.6s2.5.5 2.5 1.6-1.1 1.5-2.5 1.5-2.5.4-2.5 1.5 1.1 1.6 2.5 1.6 2.5-.5 2.5-1.6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
         <h3><span lang-ru>Финансовая грамотность</span><span lang-ua>Фінансова грамотність</span><span lang-en>Financial literacy</span></h3>
         <p><span lang-ru>Знакомим детей с миром денег через игру: как считать, копить и принимать разумные решения.</span><span lang-ua>Знайомимо дітей зі світом грошей через гру: як рахувати, заощаджувати та приймати розумні рішення.</span><span lang-en>Introducing children to the world of money through play: counting, saving and making smart decisions.</span></p>
       </div>
-      <div class="card reveal">
+      <div class="card reveal" data-svc="moms">
         <div class="cic" style="background:var(--lav)"><svg width="26" height="26" viewBox="0 0 24 24" fill="none"><path d="M12 21s-7-4.5-7-10a4 4 0 017-2.6A4 4 0 0119 11c0 5.5-7 10-7 10z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg></div>
         <h3><span lang-ru>Клуб для мам</span><span lang-ua>Клуб для мам</span><span lang-en>Mothers' club</span></h3>
         <p><span lang-ru>Тёплые встречи для мам: общение, поддержка и время для себя в кругу тех, кто понимает.</span><span lang-ua>Теплі зустрічі для мам: спілкування, підтримка та час для себе в колі тих, хто розуміє.</span><span lang-en>Warm gatherings for mothers: connection, support and time for yourself among people who understand.</span></p>
@@ -999,8 +1018,14 @@ function setLang(l){
   if(l==='en')body.classList.add('lang-en');
   document.documentElement.lang = (l==='ua')?'uk':l;
   document.querySelectorAll('#svc option').forEach(o=>{o.textContent=o.dataset[l];});
-  renderCal();renderFaq();
+  applyAlts(l);
+  renderCal();renderFaq();renderSvcFaqs();
 }
+/* Images carry their alt text per language in data-alt-ru/ua/en. */
+function applyAlts(l){
+  document.querySelectorAll('img[data-alt-ru]').forEach(img=>{img.alt=img.dataset['alt'+l.charAt(0).toUpperCase()+l.slice(1)]||'';});
+}
+applyAlts(curLang());
 document.querySelectorAll('.lang button').forEach(b=>b.addEventListener('click',()=>setLang(b.dataset.lang)));
 /* Populate service option labels for the default language on first load
    (setLang only runs on a language switch, so without this the dropdown
@@ -1061,21 +1086,21 @@ const faqs=[
  {ru:["Нужно ли записываться заранее?","Да, занятия проходят по предварительной записи. Так мы можем уделить ребёнку всё внимание без спешки."],
   ua:["Чи потрібно записуватися заздалегідь?","Так, заняття проходять за попереднім записом. Так ми можемо приділити дитині всю увагу без поспіху."],
   en:["Do I need to book in advance?","Yes, sessions are by appointment. This lets us give your child full attention, without rushing."]},
- {ru:["С какого возраста вы занимаетесь с детьми?","Мы работаем с дошкольниками и младшими школьниками. На первой встрече подберём программу под возраст и потребности ребёнка."],
-  ua:["З якого віку ви займаєтеся з дітьми?","Ми працюємо з дошкільнятами та молодшими школярами. На першій зустрічі підберемо програму під вік і потреби дитини."],
-  en:["From what age do you work with children?","We work with pre-schoolers and younger school-age children. At the first meeting we tailor a programme to the child's age and needs."]},
- {ru:["Сколько длится занятие?","Обычно 30–45 минут — в зависимости от возраста и того, как ребёнок чувствует себя в этот день."],
-  ua:["Скільки триває заняття?","Зазвичай 30–45 хвилин — залежно від віку та того, як дитина почувається цього дня."],
-  en:["How long is a session?","Usually 30–45 minutes, depending on the child's age and how they feel that day."]},
+ {ru:["С какого возраста вы занимаетесь с детьми?","У нас занимаются и дошкольники, и школьники — программу подбираем индивидуально под возраст и потребности ребёнка."],
+  ua:["З якого віку ви займаєтеся з дітьми?","У нас займаються і дошкільнята, і школярі — програму добираємо індивідуально під вік та потреби дитини."],
+  en:["What ages do you work with?","We work with pre-schoolers and school-age children alike — the programme is put together individually, around each child's age and needs."]},
+ {ru:["Сколько длится занятие?","Занятия занимают от 30 до 40 минут, но это зависит от того, как ребёнок себя чувствует в этот день, и от программы. Также есть двухчасовые занятия."],
+  ua:["Скільки триває заняття?","Заняття тривають від 30 до 40 хвилин, але це залежить від того, як дитина почувається цього дня, та від програми. Також є двогодинні заняття."],
+  en:["How long is a session?","Sessions take 30 to 40 minutes, though it depends on how your child feels that day and on the programme. We also run two-hour sessions."]},
  {ru:["На каком языке проходят занятия?","Занятия проходят на русском и украинском языках."],
   ua:["Якою мовою проходять заняття?","Заняття проходять російською та українською мовами."],
   en:["What language are sessions in?","Sessions are held in Russian and Ukrainian."]},
  {ru:["Где вы находитесь?","г. Кишинёв, ул. Зелинского 5/8. Нас легко узнать по виниловой наклейке на фасаде здания — на ней изображены девочка, цветы и ладошки."],
   ua:["Де ви розташовані?","м. Кишинів, вул. Зелінського 5/8. Нас легко впізнати за вініловою наклейкою на фасаді будівлі — на ній зображені дівчинка, квіти та долоньки."],
   en:["Where are you located?","Chișinău, Zelinsky St 5/8. You'll easily spot us by the vinyl mural on the front of the building — it shows a young girl, flowers and little hands."]},
- {ru:["Присутствуют ли родители на занятии?","Конечно. Особенно на первых встречах присутствие родителя помогает ребёнку чувствовать себя спокойно."],
-  ua:["Чи присутні батьки на занятті?","Звісно. Особливо на перших зустрічах присутність батьків допомагає дитині почуватися спокійно."],
-  en:["Can parents stay during the session?","Of course. Especially in the early meetings, a parent's presence helps the child feel safe."]},
+ {ru:["Присутствуют ли родители на занятии?","На первых встречах присутствуют родители — это помогает ребёнку освоиться. Позже ребёнок начинает заниматься самостоятельно, а мы делимся с вами прогрессом после каждой встречи."],
+  ua:["Чи присутні батьки на занятті?","На перших зустрічах присутні батьки — це допомагає дитині освоїтися. Згодом дитина починає займатися самостійно, а ми ділимося з вами прогресом після кожної зустрічі."],
+  en:["Are parents present during the session?","Parents join the first few meetings — it helps the child settle in. Later on your child works on their own, and after every session we share how things are going."]},
 ];
 function renderFaq(){
   const l=curLang(),box=document.getElementById('faqList');
@@ -1090,6 +1115,111 @@ function renderFaq(){
   });
 }
 renderFaq();
+
+/* ---------- Service card FAQs (click a card to expand two Q&A pairs) ---------- */
+const svcFaqs={
+ logoped:{
+  ru:[["С какого возраста можно начинать занятия с логопедом?","Уже с 2–3 лет — чем раньше начнём, тем мягче и естественнее проходит развитие речи. Но заниматься никогда не поздно, мы подберём подход под любой возраст."],
+      ["Сколько занятий обычно нужно, чтобы увидеть результат?","Это индивидуально и зависит от ребёнка. Многие родители замечают первые изменения уже через несколько недель регулярных занятий — мы всегда держим вас в курсе прогресса."]],
+  ua:[["З якого віку можна починати заняття з логопедом?","Уже з 2–3 років — що раніше почнемо, то м’якше й природніше відбувається розвиток мовлення. Але займатися ніколи не пізно, ми підберемо підхід до будь-якого віку."],
+      ["Скільки занять зазвичай потрібно, щоб побачити результат?","Це індивідуально й залежить від дитини. Багато батьків помічають перші зміни вже за кілька тижнів регулярних занять — ми завжди тримаємо вас у курсі прогресу."]],
+  en:[["At what age can speech therapy start?","From as early as 2–3 years — the earlier we begin, the gentler and more natural speech development is. But it’s never too late to start; we’ll find an approach for any age."],
+      ["How many sessions does it take to see results?","That’s individual and depends on the child. Many parents notice the first changes after just a few weeks of regular sessions — and we always keep you in the loop on progress."]]},
+ defectolog:{
+  ru:[["Чем дефектолог отличается от логопеда?","Логопед работает над звукопроизношением и речью, а дефектолог помогает развивать внимание, память и мышление — особенно если ребёнку нужна дополнительная поддержка в обучении."],
+      ["Как понять, нужна ли моему ребёнку помощь дефектолога?","Если вам кажется, что ребёнку сложнее даётся учёба, концентрация или новая информация — приходите на диагностику, мы вместе разберёмся, что поможет именно вашему ребёнку."]],
+  ua:[["Чим дефектолог відрізняється від логопеда?","Логопед працює над звуковимовою та мовленням, а дефектолог допомагає розвивати увагу, пам’ять і мислення — особливо якщо дитині потрібна додаткова підтримка в навчанні."],
+      ["Як зрозуміти, чи потрібна моїй дитині допомога дефектолога?","Якщо вам здається, що дитині важче даються навчання, концентрація чи нова інформація — приходьте на діагностику, ми разом з’ясуємо, що допоможе саме вашій дитині."]],
+  en:[["How is a defectologist different from a speech therapist?","A speech therapist works on sounds and speech, while a defectologist helps develop attention, memory and thinking — especially when a child needs extra support with learning."],
+      ["How do I know whether my child needs a defectologist?","If it feels to you that learning, concentration or taking in new information is harder for your child, come in for an assessment — together we’ll work out what will help your child specifically."]]},
+ neuro:{
+  ru:[["Что такое нейрогимнастика и зачем она нужна?","Это специальные упражнения, которые помогают двум полушариям мозга работать слаженно — это улучшает концентрацию, память и общую координацию."],
+      ["Подходит ли нейрогимнастика для дошкольников?","Да, и особенно хорошо работает именно в дошкольном возрасте — в игровой форме, без напряжения."]],
+  ua:[["Що таке нейрогімнастика і навіщо вона потрібна?","Це спеціальні вправи, які допомагають двом півкулям мозку працювати злагоджено — це покращує концентрацію, пам’ять і загальну координацію."],
+      ["Чи підходить нейрогімнастика дошкільнятам?","Так, і особливо добре вона працює саме в дошкільному віці — в ігровій формі, без напруження."]],
+  en:[["What is neurogymnastics and what is it for?","These are special exercises that help the two hemispheres of the brain work together — which improves concentration, memory and overall coordination."],
+      ["Is neurogymnastics suitable for pre-schoolers?","Yes — and it works especially well at pre-school age, through play and without any strain."]]},
+ senso:{
+  ru:[["Что входит в сенсомоторные занятия?","Игры с разными текстурами, движением и балансом — они помогают ребёнку лучше чувствовать своё тело и развивают координацию."],
+      ["Кому особенно полезны такие занятия?","Детям, которым сложно даётся мелкая моторика, равновесие или концентрация — а также всем, кто просто любит активные, творческие игры."]],
+  ua:[["Що входить у сенсомоторні заняття?","Ігри з різними текстурами, рухом і балансом — вони допомагають дитині краще відчувати своє тіло та розвивають координацію."],
+      ["Кому такі заняття особливо корисні?","Дітям, яким важко даються дрібна моторика, рівновага чи концентрація — а також усім, хто просто любить активні, творчі ігри."]],
+  en:[["What happens in a sensorimotor session?","Games with different textures, movement and balance — they help a child feel their body better and develop coordination."],
+      ["Who benefits most from these sessions?","Children who find fine motor skills, balance or concentration difficult — and equally any child who simply loves active, creative play."]]},
+ school:{
+  ru:[["Во сколько лет лучше начинать подготовку к школе?","Обычно за год-полтора до школы, но мы всегда смотрим на готовность именно вашего ребёнка, а не только на возраст."],
+      ["Что входит в программу подготовки?","Чтение, письмо, логика и уверенность в себе — всё в спокойном, игровом темпе, без давления и лишнего стресса."]],
+  ua:[["У скільки років краще починати підготовку до школи?","Зазвичай за рік-півтора до школи, але ми завжди дивимося на готовність саме вашої дитини, а не лише на вік."],
+      ["Що входить у програму підготовки?","Читання, письмо, логіка та впевненість у собі — усе в спокійному, ігровому темпі, без тиску й зайвого стресу."]],
+  en:[["When is the best age to start preparing for school?","Usually a year to eighteen months before school begins, but we always look at your child’s readiness, not just their age."],
+      ["What does the programme cover?","Reading, writing, logic and self-confidence — all at a calm, playful pace, with no pressure or extra stress."]]},
+ sand:{
+  ru:[["Как песочная терапия помогает ребёнку?","Игры с песком снимают напряжение, развивают моторику и помогают ребёнку мягко выразить чувства, которые сложно передать словами."],
+      ["Подходит ли это детям с тревожностью?","Да, это одна из самых бережных и спокойных форм терапии — многие дети быстро расслабляются в песочнице."]],
+  ua:[["Як піскова терапія допомагає дитині?","Ігри з піском знімають напругу, розвивають моторику й допомагають дитині м’яко висловити почуття, які складно передати словами."],
+      ["Чи підходить це дітям із тривожністю?","Так, це одна з найдбайливіших і найспокійніших форм терапії — багато дітей швидко розслабляються в пісочниці."]],
+  en:[["How does sand therapy help a child?","Playing with sand releases tension, builds motor skills and lets a child gently express feelings that are hard to put into words."],
+      ["Is it suitable for anxious children?","Yes — it’s one of the gentlest, calmest forms of therapy, and many children relax in the sandbox very quickly."]]},
+ plasticine:{
+  ru:[["Чем полезна пластилинография для развития речи?","Лепка развивает мелкую моторику, которая напрямую связана с речевыми центрами мозга — а ещё это просто увлекательное творческое занятие."],
+      ["Подходит ли это детям, которые не любят сидеть на месте?","Отлично подходит — это активное, тактильное занятие, где ребёнок постоянно в движении и творчестве."]],
+  ua:[["Чим пластилінографія корисна для розвитку мовлення?","Ліплення розвиває дрібну моторику, яка напряму пов’язана з мовленнєвими центрами мозку — а ще це просто захоплива творча справа."],
+      ["Чи підходить це дітям, які не люблять сидіти на місці?","Чудово підходить — це активне, тактильне заняття, де дитина постійно в русі й творчості."]],
+  en:[["How does plasticine art help speech development?","Modelling develops fine motor skills, which are directly linked to the speech centres of the brain — and it’s simply an absorbing creative activity too."],
+      ["Is it suitable for children who can’t sit still?","It’s a great fit — an active, hands-on activity where the child is constantly moving and creating."]]},
+ finance:{
+  ru:[["Не рано ли объяснять ребёнку про деньги?","Нет — в игровой форме дети легко усваивают базовые понятия: как копить, тратить разумно и ставить простые цели."],
+      ["В каком возрасте можно начинать?","Обычно с 5–6 лет, когда ребёнок уже понимает счёт и может участвовать в простых играх с «деньгами»."]],
+  ua:[["Чи не зарано пояснювати дитині про гроші?","Ні — в ігровій формі діти легко засвоюють базові поняття: як заощаджувати, витрачати розумно й ставити прості цілі."],
+      ["З якого віку можна починати?","Зазвичай із 5–6 років, коли дитина вже розуміє лічбу й може брати участь у простих іграх із «грошима»."]],
+  en:[["Isn’t it too early to talk to a child about money?","Not at all — through play, children easily pick up the basics: saving, spending sensibly and setting simple goals."],
+      ["What age can they start?","Usually from 5–6, once a child understands counting and can join in simple games with “money”."]]},
+ moms:{
+  ru:[["Что происходит на встречах клуба?","Тёплые беседы, поддержка и время только для себя — в кругу мам, которые понимают друг друга без лишних слов."],
+      ["Нужно ли что-то готовить заранее?","Нет, просто приходите — с любыми мыслями или без них. Это ваше время."]],
+  ua:[["Що відбувається на зустрічах клубу?","Теплі бесіди, підтримка й час лише для себе — у колі мам, які розуміють одна одну без зайвих слів."],
+      ["Чи потрібно щось готувати заздалегідь?","Ні, просто приходьте — з будь-якими думками або без них. Це ваш час."]],
+  en:[["What happens at the club meetings?","Warm conversation, support and time that is just for you — among mothers who understand each other without needing many words."],
+      ["Do I need to prepare anything in advance?","No — just come, with whatever is on your mind, or with nothing at all. This is your time."]]},
+};
+const svcLabels={ru:["Частые вопросы","Свернуть"],ua:["Часті питання","Згорнути"],en:["Common questions","Hide"]};
+function svcPanel(card){return card.querySelector('.svc-faq');}
+function svcSetLabel(card,openState){
+  const t=card.querySelector('.svc-toggle-txt');
+  if(t)t.textContent=svcLabels[curLang()][openState?1:0];
+}
+function closeSvc(card){
+  card.classList.remove('open');card.setAttribute('aria-expanded','false');
+  svcPanel(card).style.maxHeight=0;svcSetLabel(card,false);
+}
+function toggleSvc(card){
+  const willOpen=!card.classList.contains('open');
+  document.querySelectorAll('.card.has-faq.open').forEach(closeSvc);
+  if(!willOpen)return;
+  card.classList.add('open');card.setAttribute('aria-expanded','true');
+  const p=svcPanel(card);p.style.maxHeight=p.scrollHeight+'px';svcSetLabel(card,true);
+}
+function renderSvcFaqs(){
+  const l=curLang();
+  document.querySelectorAll('.card[data-svc]').forEach(card=>{
+    const data=svcFaqs[card.dataset.svc];
+    if(!data)return;
+    if(!card.classList.contains('has-faq')){
+      card.classList.add('has-faq');
+      card.setAttribute('role','button');card.tabIndex=0;card.setAttribute('aria-expanded','false');
+      card.insertAdjacentHTML('beforeend','<div class="svc-toggle"><span class="svc-toggle-txt"></span><span class="pm">+</span></div><div class="svc-faq"></div>');
+      // Clicks inside the open panel must not collapse it (e.g. selecting text).
+      card.addEventListener('click',e=>{if(!e.target.closest('.svc-faq'))toggleSvc(card);});
+      card.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();toggleSvc(card);}});
+    }
+    const p=svcPanel(card);
+    p.innerHTML=data[l].map(qa=>'<div class="sq"><div class="sq-q">'+qa[0]+'</div><div class="sq-a">'+qa[1]+'</div></div>').join('');
+    svcSetLabel(card,card.classList.contains('open'));
+    // Text length differs per language, so an open panel needs re-measuring.
+    if(card.classList.contains('open'))p.style.maxHeight=p.scrollHeight+'px';
+  });
+}
+renderSvcFaqs();
 
 /* ---------- Booking calendar ---------- */
 let view=new Date();view.setDate(1);
