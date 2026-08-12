@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Политика конфиденциальности — Детские Ладошки | Privacy Policy</title>
+<meta name="description" content="Политика конфиденциальности центра детского развития «Детские Ладошки» в Кишинёве: какие данные мы собираем через форму записи, зачем, как храним и как их удалить.">
+<link rel="canonical" href="https://detskieladoshki.vercel.app/privacy.html">
+<link rel="icon" type="image/png" href="/favicon-32x32.png">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Детские Ладошки">
+<meta property="og:url" content="https://detskieladoshki.vercel.app/privacy.html">
+<meta property="og:title" content="Политика конфиденциальности — Детские Ладошки">
+<meta property="og:description" content="Какие данные мы собираем через форму записи, зачем, как храним и как их удалить.">
+<meta property="og:locale" content="ru_RU">
+<meta property="og:locale:alternate" content="uk_UA">
+<meta property="og:locale:alternate" content="en_US">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Alegreya:wght@500;700;800&family=Nunito:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --cream:#FBF5EA; --cream-2:#F5ECDB; --cream-deep:#EFE2CC;
+  --paper:#FFFCF6; --ink:#463A2E; --ink-soft:#7A6B58;
+  --green:#7DA94F; --green-deep:#5C8636; --blue-deep:#3F94BE;
+  --coral:#EF9F77; --orange:#F0A94A; --teal:#5FAE9D;
+  --line:#E7DAC4;
+  --shadow-sm:0 4px 14px rgba(94,77,46,.08);
+  --shadow:0 16px 40px rgba(94,77,46,.13);
+  --r:26px; --r-lg:38px;
+  --display:'Alegreya',Georgia,serif;
+  --body:'Nunito',system-ui,sans-serif;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:var(--body);color:var(--ink);background:var(--cream);line-height:1.7;
+  -webkit-font-smoothing:antialiased;overflow-x:hidden}
+h1,h2,h3{font-family:var(--display);font-weight:800;line-height:1.12;letter-spacing:-.01em}
+a{color:var(--green-deep)}
+.wrap{max-width:840px;margin:0 auto;padding:0 26px;position:relative;z-index:2}
+
+/* ---------- trilingual: RU (default) / UA / EN ---------- */
+[lang-ua],[lang-en]{display:none}
+body.lang-ua [lang-ru],body.lang-en [lang-ru]{display:none}
+body.lang-ua [lang-ua]{display:revert}
+body.lang-en [lang-en]{display:revert}
+
+/* ---------- nav ---------- */
+header{position:sticky;top:0;z-index:50;padding:.8rem 0;background:rgba(251,245,234,.9);
+  backdrop-filter:blur(14px);box-shadow:0 6px 24px rgba(94,77,46,.07)}
+header .wrap{max-width:1180px}
+.nav{display:flex;align-items:center;justify-content:space-between;gap:1rem}
+.brand{display:flex;align-items:center;gap:.7rem;text-decoration:none}
+.brand .name{font-family:var(--display);font-weight:800;font-size:1.18rem;line-height:1;color:var(--ink)}
+.brand .name small{display:block;font-family:var(--body);font-weight:700;font-size:.62rem;
+  letter-spacing:.14em;text-transform:uppercase;color:var(--teal);margin-top:3px}
+.nav-right{display:flex;align-items:center;gap:.7rem}
+.lang{display:flex;background:var(--cream-deep);border-radius:999px;padding:3px;font-weight:800;font-size:.82rem}
+.lang button{border:none;background:none;cursor:pointer;padding:.32rem .6rem;border-radius:999px;
+  color:var(--ink-soft);font-family:var(--body);font-weight:800;transition:.2s}
+.lang button.active{background:var(--paper);color:var(--green-deep);box-shadow:var(--shadow-sm)}
+.back{display:inline-flex;align-items:center;gap:.45rem;background:var(--paper);color:var(--ink);
+  font-weight:800;font-size:.9rem;padding:.55rem 1.1rem;border-radius:999px;text-decoration:none;
+  border:1.5px solid var(--line);box-shadow:var(--shadow-sm);transition:transform .2s,box-shadow .2s}
+.back:hover{transform:translateY(-2px);box-shadow:var(--shadow)}
+
+/* ---------- page ---------- */
+.page-head{padding:3rem 0 1.6rem;text-align:center}
+.eyebrow{font-weight:800;font-size:.78rem;letter-spacing:.16em;text-transform:uppercase;
+  color:var(--green-deep);display:inline-flex;align-items:center;gap:.5rem}
+.eyebrow::before{content:"";width:26px;height:2px;border-radius:2px;background:var(--coral)}
+.page-head h1{font-size:clamp(2.1rem,5vw,3.1rem);margin:.9rem 0 .7rem}
+.updated{font-size:.9rem;color:var(--ink-soft);font-weight:700}
+
+.card{background:var(--paper);border:1.5px solid var(--line);border-radius:var(--r-lg);
+  box-shadow:var(--shadow);padding:2.4rem 2.6rem;margin:1.6rem 0 3rem}
+.lead{font-size:1.08rem;color:var(--ink-soft);font-weight:600;margin-bottom:2rem;
+  padding-bottom:1.6rem;border-bottom:1.5px dashed var(--line)}
+.card h2{font-size:1.42rem;margin:2.2rem 0 .7rem;color:var(--ink);scroll-margin-top:90px}
+.card h2:first-of-type{margin-top:0}
+.card h2 .num{color:var(--coral);font-size:1.05rem;font-family:var(--body);font-weight:800;
+  margin-right:.5rem;vertical-align:.12em}
+.card p{margin:.7rem 0}
+.card ul{margin:.7rem 0 .7rem 1.2rem}
+.card li{margin:.45rem 0}
+.card li b{color:var(--ink)}
+.note{background:linear-gradient(135deg,rgba(125,169,79,.12),rgba(240,169,74,.13));
+  border:1.5px solid rgba(125,169,79,.35);border-radius:var(--r);padding:1.1rem 1.4rem;margin:1.4rem 0;
+  font-weight:600}
+.contact-box{background:var(--cream-2);border-radius:var(--r);padding:1.3rem 1.5rem;margin-top:1rem;font-weight:600}
+.contact-box a{font-weight:800;text-decoration:none}
+.contact-box a:hover{text-decoration:underline}
+
+footer{background:var(--ink);color:#EDE3D5;padding:2.6rem 0 1.6rem}
+footer .wrap{max-width:1180px}
+.foot-bottom{display:flex;justify-content:space-between;flex-wrap:wrap;gap:.7rem;
+  font-size:.85rem;color:rgba(237,227,213,.6);font-weight:600}
+.foot-bottom a{color:var(--orange);text-decoration:none;font-weight:700}
+.foot-bottom a:hover{text-decoration:underline}
+
+@media(max-width:640px){
+  .card{padding:1.6rem 1.4rem;border-radius:var(--r)}
+  .brand .name{font-size:1rem}
+  .back span{display:none}
+}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap">
+    <nav class="nav">
+      <a class="brand" href="/">
+        <span class="name">Детские Ладошки
+          <small lang-ru>Центр детского развития</small>
+          <small lang-ua>Центр дитячого розвитку</small>
+          <small lang-en>Child development centre</small>
+        </span>
+      </a>
+      <div class="nav-right">
+        <a class="back" href="/">←
+          <span lang-ru>На главную</span><span lang-ua>На головну</span><span lang-en>Back to site</span>
+        </a>
+        <div class="lang">
+          <button data-lang="ru" class="active">RU</button>
+          <button data-lang="ua">UA</button>
+          <button data-lang="en">EN</button>
+        </div>
+      </div>
+    </nav>
+  </div>
+</header>
+
+<main class="wrap">
+
+  <div class="page-head">
+    <span class="eyebrow">
+      <span lang-ru>Конфиденциальность</span><span lang-ua>Конфіденційність</span><span lang-en>Privacy</span>
+    </span>
+    <h1>
+      <span lang-ru>Политика конфиденциальности</span>
+      <span lang-ua>Політика конфіденційності</span>
+      <span lang-en>Privacy Policy</span>
+    </h1>
+    <p class="updated">
+      <span lang-ru>Последнее обновление: 12 августа 2026 г.</span>
+      <span lang-ua>Останнє оновлення: 12 серпня 2026 р.</span>
+      <span lang-en>Last updated: 12 August 2026</span>
+    </p>
+  </div>
+
+  <!-- ============================ RU ============================ -->
+  <div class="card" lang-ru>
+    <p class="lead">Мы — небольшой детский центр, и с данными обращаемся так же бережно, как с детьми. Эта страница простым языком объясняет, какие данные вы нам оставляете, зачем они нужны, кто их видит и как попросить их удалить.</p>
+
+    <h2><span class="num">01</span>Кто отвечает за ваши данные</h2>
+    <p>Оператором персональных данных является центр детского развития <b>«Детские Ладошки»</b>:</p>
+    <div class="contact-box">
+      ул. Зелинского 5/8, Кишинёв, Республика Молдова<br>
+      Телефон: <a href="tel:+37368544154">+373 68 544 154</a>, <a href="tel:+37369770779">+373 69 770 779</a><br>
+      Эл. почта: <a href="mailto:1detskieladoshki@gmail.com">1detskieladoshki@gmail.com</a>
+    </div>
+    <p>По любым вопросам о ваших данных пишите или звоните нам по этим контактам — отдельного отдела нет, вам ответит руководство центра.</p>
+
+    <h2><span class="num">02</span>Какие данные мы собираем</h2>
+    <p><b>Через форму записи на сайте</b> вы сообщаете нам:</p>
+    <ul>
+      <li><b>имя родителя</b> — чтобы знать, к кому обращаться;</li>
+      <li><b>номер телефона</b> — чтобы перезвонить и подтвердить запись;</li>
+      <li><b>возраст ребёнка</b> (необязательно) — чтобы подобрать специалиста и формат занятия;</li>
+      <li><b>выбранную услугу, желаемые дату и время</b>;</li>
+      <li><b>сообщение</b> (необязательно) — всё, что вы решите написать сами.</li>
+    </ul>
+    <p><b>Если вы связываетесь с нами напрямую</b> — по телефону, эл. почте, в Instagram или Telegram — мы получаем те данные, которые вы сообщаете сами: имя, телефон, адрес эл. почты, содержание переписки.</p>
+    <p><b>Технические данные.</b> Наш хостинг, как и любой веб-сервер, ведёт служебные журналы (IP-адрес, время запроса, тип браузера). Они нужны для работы и безопасности сайта, мы их не анализируем и не связываем с вашей заявкой.</p>
+
+    <div class="note">Мы <b>не</b> используем аналитику, рекламные пиксели и трекеры. Мы не следим за вами на других сайтах, не строим рекламные профили и не используем cookie для рекламы или статистики.</div>
+
+    <h2><span class="num">03</span>Зачем нам эти данные</h2>
+    <p>Только для того, чтобы связаться с вами и организовать занятие:</p>
+    <ul>
+      <li>перезвонить или написать, чтобы подтвердить заявку;</li>
+      <li>согласовать дату, время и услугу, записать на диагностику или занятие;</li>
+      <li>ответить на ваши вопросы;</li>
+      <li>вести обычный учёт занятий, если вы стали нашим клиентом.</li>
+    </ul>
+    <p>Правовое основание — ваше согласие, которое вы даёте, отправляя форму или обращаясь к нам, а также действия по вашей просьбе до заключения договора об услугах. Мы обрабатываем данные в соответствии с Законом Республики Молдова № 133 от 08.07.2011 «О защите персональных данных».</p>
+    <p>Мы <b>не</b> продаём и не передаём ваши данные третьим лицам в рекламных целях и <b>не</b> отправляем рассылки, о которых вы не просили.</p>
+
+    <h2><span class="num">04</span>Данные о детях</h2>
+    <p>Форму на сайте заполняет взрослый — родитель или законный представитель ребёнка. О самом ребёнке мы просим минимум: только возраст, и то по желанию.</p>
+    <p>Информация, которая появляется в ходе диагностики и занятий (особенности речи и развития, рекомендации специалиста), хранится в бумажном или закрытом электронном виде, доступна только работающему с ребёнком специалисту и руководству центра и не публикуется никогда и нигде.</p>
+    <p>Фотографии и видео с детьми мы публикуем на сайте и в социальных сетях <b>только с отдельного согласия родителей</b>. Такое согласие можно отозвать в любой момент — напишите нам, и материал будет удалён.</p>
+
+    <h2><span class="num">05</span>Кто ещё видит эти данные</h2>
+    <p>Внутри центра — только те, кому это нужно для работы с вами. Кроме того, мы пользуемся обычными интернет-сервисами, через которые технически проходят данные:</p>
+    <ul>
+      <li><b>Web3Forms</b> — доставляет заполненную форму на нашу почту (<a href="https://web3forms.com/privacy" target="_blank" rel="noopener">политика конфиденциальности</a>);</li>
+      <li><b>Google</b> — почта Gmail, где хранится переписка и заявки; шрифты Google Fonts и встроенная карта Google Maps (при загрузке карты ваш IP-адрес становится известен Google);</li>
+      <li><b>Vercel</b> — хостинг, на котором работает сайт;</li>
+      <li><b>Instagram и Telegram</b> — если вы пишете нам там, ваша переписка подчиняется также политикам этих платформ.</li>
+    </ul>
+    <p>Эти компании выступают обработчиками и вправе использовать данные только для оказания услуги нам. Их серверы могут находиться за пределами Молдовы, в том числе в ЕС и США.</p>
+    <p>Мы раскроем данные государственным органам только тогда, когда этого прямо требует закон.</p>
+
+    <h2><span class="num">06</span>Сколько мы храним данные</h2>
+    <ul>
+      <li><b>Заявки от тех, кто не стал клиентом</b> — до 12 месяцев с последнего обращения, затем удаляем.</li>
+      <li><b>Данные клиентов и записи о занятиях</b> — пока вы пользуетесь услугами и разумный срок после, чтобы можно было вернуться к истории занятий, либо столько, сколько требует законодательство.</li>
+      <li><b>Переписка</b> — пока она может быть полезна для ответа на ваши вопросы.</li>
+    </ul>
+    <p>По вашей просьбе мы удалим данные раньше — если только закон не обязывает нас их сохранить.</p>
+
+    <h2><span class="num">07</span>Как мы защищаем данные</h2>
+    <p>Сайт работает по защищённому протоколу HTTPS. Доступ к почте и записям есть только у ограниченного круга сотрудников, устройства и учётные записи защищены паролями. Ни один способ передачи данных в интернете не даёт стопроцентной гарантии, но мы делаем всё разумное, чтобы ваши данные не попали к посторонним.</p>
+
+    <h2><span class="num">08</span>Ваши права</h2>
+    <p>В отношении своих данных (и данных своего ребёнка) вы вправе:</p>
+    <ul>
+      <li>узнать, какие данные о вас у нас есть, и получить их копию;</li>
+      <li>исправить неточные данные;</li>
+      <li>потребовать удаления данных;</li>
+      <li>возразить против обработки или ограничить её;</li>
+      <li>отозвать согласие в любой момент — это не влияет на законность обработки до отзыва.</li>
+    </ul>
+    <p>Чтобы воспользоваться правами, просто напишите на <a href="mailto:1detskieladoshki@gmail.com">1detskieladoshki@gmail.com</a> или позвоните нам. Мы ответим в разумный срок, как правило в течение 15 дней. Это бесплатно.</p>
+    <p>Если наш ответ вас не устроит, вы можете подать жалобу в Национальный центр по защите персональных данных Республики Молдова — контакты на сайте <a href="https://datepersonale.md" target="_blank" rel="noopener">datepersonale.md</a>. Если вы находитесь в Европейском союзе, вы также можете обратиться в надзорный орган своей страны.</p>
+
+    <h2><span class="num">09</span>Ссылки на другие сайты</h2>
+    <p>На сайте есть ссылки на наши страницы в Instagram и Telegram и встроенная карта Google. Эта политика не распространяется на сторонние сайты — там действуют их собственные правила.</p>
+
+    <h2><span class="num">10</span>Изменения политики</h2>
+    <p>Если мы начнём собирать данные иначе — например, добавим аналитику или рекламный пиксель — мы обновим эту страницу и изменим дату вверху. Существенные изменения мы отметим на видном месте.</p>
+
+    <h2><span class="num">11</span>Вопросы</h2>
+    <p>Спрашивайте, если что-то непонятно, — мы объясним человеческим языком:</p>
+    <div class="contact-box">
+      <a href="mailto:1detskieladoshki@gmail.com">1detskieladoshki@gmail.com</a><br>
+      <a href="tel:+37368544154">+373 68 544 154</a>
+    </div>
+  </div>
+
+  <!-- ============================ UA ============================ -->
+  <div class="card" lang-ua>
+    <p class="lead">Ми — невеликий дитячий центр, і з даними поводимося так само дбайливо, як з дітьми. Ця сторінка простою мовою пояснює, які дані ви нам залишаєте, навіщо вони потрібні, хто їх бачить і як попросити їх видалити.</p>
+
+    <h2><span class="num">01</span>Хто відповідає за ваші дані</h2>
+    <p>Оператором персональних даних є центр дитячого розвитку <b>«Дитячі Долоньки» (Детские Ладошки)</b>:</p>
+    <div class="contact-box">
+      вул. Зелінського 5/8, Кишинів, Республіка Молдова<br>
+      Телефон: <a href="tel:+37368544154">+373 68 544 154</a>, <a href="tel:+37369770779">+373 69 770 779</a><br>
+      Ел. пошта: <a href="mailto:1detskieladoshki@gmail.com">1detskieladoshki@gmail.com</a>
+    </div>
+    <p>З будь-яких питань про ваші дані пишіть або телефонуйте нам за цими контактами — окремого відділу немає, вам відповість керівництво центру.</p>
+
+    <h2><span class="num">02</span>Які дані ми збираємо</h2>
+    <p><b>Через форму запису на сайті</b> ви повідомляєте нам:</p>
+    <ul>
+      <li><b>ім'я батьків</b> — щоб знати, до кого звертатися;</li>
+      <li><b>номер телефону</b> — щоб зателефонувати та підтвердити запис;</li>
+      <li><b>вік дитини</b> (необов'язково) — щоб підібрати спеціаліста та формат заняття;</li>
+      <li><b>обрану послугу, бажані дату й час</b>;</li>
+      <li><b>повідомлення</b> (необов'язково) — усе, що ви вирішите написати самі.</li>
+    </ul>
+    <p><b>Якщо ви звертаєтесь до нас напряму</b> — телефоном, електронною поштою, в Instagram чи Telegram — ми отримуємо ті дані, які ви повідомляєте самі: ім'я, телефон, адресу ел. пошти, зміст листування.</p>
+    <p><b>Технічні дані.</b> Наш хостинг, як і будь-який вебсервер, веде службові журнали (IP-адреса, час запиту, тип браузера). Вони потрібні для роботи та безпеки сайту, ми їх не аналізуємо і не пов'язуємо з вашою заявкою.</p>
+
+    <div class="note">Ми <b>не</b> використовуємо аналітику, рекламні пікселі та трекери. Ми не стежимо за вами на інших сайтах, не будуємо рекламні профілі й не використовуємо cookie для реклами чи статистики.</div>
+
+    <h2><span class="num">03</span>Навіщо нам ці дані</h2>
+    <p>Лише для того, щоб зв'язатися з вами та організувати заняття:</p>
+    <ul>
+      <li>зателефонувати або написати, щоб підтвердити заявку;</li>
+      <li>узгодити дату, час і послугу, записати на діагностику чи заняття;</li>
+      <li>відповісти на ваші запитання;</li>
+      <li>вести звичайний облік занять, якщо ви стали нашим клієнтом.</li>
+    </ul>
+    <p>Правова підстава — ваша згода, яку ви даєте, надсилаючи форму або звертаючись до нас, а також дії на ваше прохання до укладення договору про послуги. Ми обробляємо дані відповідно до Закону Республіки Молдова № 133 від 08.07.2011 «Про захист персональних даних».</p>
+    <p>Ми <b>не</b> продаємо і не передаємо ваші дані третім особам у рекламних цілях і <b>не</b> надсилаємо розсилки, про які ви не просили.</p>
+
+    <h2><span class="num">04</span>Дані про дітей</h2>
+    <p>Форму на сайті заповнює дорослий — батько, мати або законний представник дитини. Про саму дитину ми просимо мінімум: лише вік, та й то за бажанням.</p>
+    <p>Інформація, що з'являється під час діагностики та занять (особливості мовлення й розвитку, рекомендації спеціаліста), зберігається в паперовому або закритому електронному вигляді, доступна лише спеціалісту, який працює з дитиною, і керівництву центру, та не публікується ніколи й ніде.</p>
+    <p>Фотографії та відео з дітьми ми публікуємо на сайті та в соціальних мережах <b>лише за окремою згодою батьків</b>. Таку згоду можна відкликати будь-коли — напишіть нам, і матеріал буде видалено.</p>
+
+    <h2><span class="num">05</span>Хто ще бачить ці дані</h2>
+    <p>Усередині центру — лише ті, кому це потрібно для роботи з вами. Крім того, ми користуємося звичайними інтернет-сервісами, через які технічно проходять дані:</p>
+    <ul>
+      <li><b>Web3Forms</b> — доставляє заповнену форму на нашу пошту (<a href="https://web3forms.com/privacy" target="_blank" rel="noopener">політика конфіденційності</a>);</li>
+      <li><b>Google</b> — пошта Gmail, де зберігається листування та заявки; шрифти Google Fonts і вбудована карта Google Maps (під час завантаження карти ваша IP-адреса стає відома Google);</li>
+      <li><b>Vercel</b> — хостинг, на якому працює сайт;</li>
+      <li><b>Instagram і Telegram</b> — якщо ви пишете нам там, ваше листування підпорядковується також політикам цих платформ.</li>
+    </ul>
+    <p>Ці компанії виступають обробниками і мають право використовувати дані лише для надання послуги нам. Їхні сервери можуть перебувати за межами Молдови, зокрема в ЄС і США.</p>
+    <p>Ми розкриємо дані державним органам лише тоді, коли цього прямо вимагає закон.</p>
+
+    <h2><span class="num">06</span>Скільки ми зберігаємо дані</h2>
+    <ul>
+      <li><b>Заявки від тих, хто не став клієнтом</b> — до 12 місяців з останнього звернення, потім видаляємо.</li>
+      <li><b>Дані клієнтів і записи про заняття</b> — доки ви користуєтеся послугами і розумний строк після, щоб можна було повернутися до історії занять, або стільки, скільки вимагає законодавство.</li>
+      <li><b>Листування</b> — доки воно може бути корисним для відповіді на ваші запитання.</li>
+    </ul>
+    <p>На ваше прохання ми видалимо дані раніше — якщо тільки закон не зобов'язує нас їх зберегти.</p>
+
+    <h2><span class="num">07</span>Як ми захищаємо дані</h2>
+    <p>Сайт працює за захищеним протоколом HTTPS. Доступ до пошти та записів має лише обмежене коло працівників, пристрої та облікові записи захищені паролями. Жоден спосіб передавання даних в інтернеті не дає стовідсоткової гарантії, але ми робимо все розумне, щоб ваші дані не потрапили до сторонніх.</p>
+
+    <h2><span class="num">08</span>Ваші права</h2>
+    <p>Щодо своїх даних (і даних своєї дитини) ви маєте право:</p>
+    <ul>
+      <li>дізнатися, які дані про вас у нас є, та отримати їх копію;</li>
+      <li>виправити неточні дані;</li>
+      <li>вимагати видалення даних;</li>
+      <li>заперечити проти обробки або обмежити її;</li>
+      <li>відкликати згоду будь-коли — це не впливає на законність обробки до відкликання.</li>
+    </ul>
+    <p>Щоб скористатися правами, просто напишіть на <a href="mailto:1detskieladoshki@gmail.com">1detskieladoshki@gmail.com</a> або зателефонуйте нам. Ми відповімо в розумний строк, як правило протягом 15 днів. Це безкоштовно.</p>
+    <p>Якщо наша відповідь вас не задовольнить, ви можете подати скаргу до Національного центру із захисту персональних даних Республіки Молдова — контакти на сайті <a href="https://datepersonale.md" target="_blank" rel="noopener">datepersonale.md</a>. Якщо ви перебуваєте в Європейському Союзі, ви також можете звернутися до наглядового органу своєї країни.</p>
+
+    <h2><span class="num">09</span>Посилання на інші сайти</h2>
+    <p>На сайті є посилання на наші сторінки в Instagram і Telegram та вбудована карта Google. Ця політика не поширюється на сторонні сайти — там діють їхні власні правила.</p>
+
+    <h2><span class="num">10</span>Зміни політики</h2>
+    <p>Якщо ми почнемо збирати дані інакше — наприклад, додамо аналітику чи рекламний піксель — ми оновимо цю сторінку та змінимо дату вгорі. Суттєві зміни ми відзначимо на видному місці.</p>
+
+    <h2><span class="num">11</span>Запитання</h2>
+    <p>Запитуйте, якщо щось незрозуміло, — ми пояснимо людською мовою:</p>
+    <div class="contact-box">
+      <a href="mailto:1detskieladoshki@gmail.com">1detskieladoshki@gmail.com</a><br>
+      <a href="tel:+37368544154">+373 68 544 154</a>
+    </div>
+  </div>
+
+  <!-- ============================ EN ============================ -->
+  <div class="card" lang-en>
+    <p class="lead">We're a small children's centre, and we treat your data as carefully as we treat the children. This page explains in plain language what you share with us, why we need it, who sees it and how to ask us to delete it.</p>
+
+    <h2><span class="num">01</span>Who is responsible for your data</h2>
+    <p>The data controller is the child development centre <b>Children's Palms (Детские Ладошки)</b>:</p>
+    <div class="contact-box">
+      Zelinsky St 5/8, Chișinău, Republic of Moldova<br>
+      Phone: <a href="tel:+37368544154">+373 68 544 154</a>, <a href="tel:+37369770779">+373 69 770 779</a><br>
+      Email: <a href="mailto:1detskieladoshki@gmail.com">1detskieladoshki@gmail.com</a>
+    </div>
+    <p>For any question about your data, write or call us using these details — there's no separate department; the centre's management will answer you personally.</p>
+
+    <h2><span class="num">02</span>What we collect</h2>
+    <p><b>Through the booking form on this site</b> you give us:</p>
+    <ul>
+      <li><b>parent's name</b> — so we know who we're speaking to;</li>
+      <li><b>phone number</b> — so we can call back and confirm the booking;</li>
+      <li><b>child's age</b> (optional) — to match the right specialist and format;</li>
+      <li><b>the service you chose and your preferred date and time</b>;</li>
+      <li><b>a message</b> (optional) — anything you choose to write yourself.</li>
+    </ul>
+    <p><b>If you contact us directly</b> — by phone, email, Instagram or Telegram — we receive whatever you tell us: your name, phone number, email address and the content of the conversation.</p>
+    <p><b>Technical data.</b> Our hosting provider, like any web server, keeps standard logs (IP address, request time, browser type). They exist for the site to run safely; we don't analyse them or connect them to your request.</p>
+
+    <div class="note">We do <b>not</b> use analytics, advertising pixels or trackers. We don't follow you across other websites, don't build advertising profiles and don't use cookies for advertising or statistics.</div>
+
+    <h2><span class="num">03</span>Why we need it</h2>
+    <p>Only to get in touch with you and arrange a session:</p>
+    <ul>
+      <li>to call or write back and confirm your request;</li>
+      <li>to agree a date, time and service, and book an assessment or session;</li>
+      <li>to answer your questions;</li>
+      <li>to keep ordinary records of sessions if you become our client.</li>
+    </ul>
+    <p>The legal basis is your consent, given when you send the form or contact us, together with steps taken at your request before entering into a service agreement. We process data in line with Law No. 133 of 08.07.2011 of the Republic of Moldova on the Protection of Personal Data.</p>
+    <p>We do <b>not</b> sell or share your data with third parties for advertising, and we do <b>not</b> send marketing messages you didn't ask for.</p>
+
+    <h2><span class="num">04</span>Children's data</h2>
+    <p>The form is filled in by an adult — the child's parent or legal guardian. About the child we ask for the bare minimum: the age only, and even that is optional.</p>
+    <p>Information that arises during assessment and sessions (speech and development notes, a specialist's recommendations) is kept on paper or in closed electronic form, is available only to the specialist working with the child and to the centre's management, and is never published anywhere.</p>
+    <p>Photos and videos of children appear on our site and social media <b>only with separate parental consent</b>. That consent can be withdrawn at any time — write to us and the material will be removed.</p>
+
+    <h2><span class="num">05</span>Who else sees this data</h2>
+    <p>Inside the centre, only the people who need it to work with you. Beyond that, we use ordinary internet services that the data technically passes through:</p>
+    <ul>
+      <li><b>Web3Forms</b> — delivers the completed form to our inbox (<a href="https://web3forms.com/privacy" target="_blank" rel="noopener">privacy policy</a>);</li>
+      <li><b>Google</b> — Gmail, where requests and correspondence are stored; Google Fonts and the embedded Google Maps map (loading the map makes your IP address known to Google);</li>
+      <li><b>Vercel</b> — the hosting the site runs on;</li>
+      <li><b>Instagram and Telegram</b> — if you message us there, those platforms' own policies apply to the conversation as well.</li>
+    </ul>
+    <p>These companies act as processors and may use the data only to provide their service to us. Their servers may be located outside Moldova, including in the EU and the USA.</p>
+    <p>We will disclose data to public authorities only where the law expressly requires it.</p>
+
+    <h2><span class="num">06</span>How long we keep it</h2>
+    <ul>
+      <li><b>Requests from people who don't become clients</b> — up to 12 months from the last contact, then deleted.</li>
+      <li><b>Client details and session records</b> — while you use our services and for a reasonable period afterwards, so we can refer back to the history of sessions, or for as long as the law requires.</li>
+      <li><b>Correspondence</b> — for as long as it may be useful in answering your questions.</li>
+    </ul>
+    <p>At your request we'll delete data sooner — unless the law obliges us to keep it.</p>
+
+    <h2><span class="num">07</span>How we protect it</h2>
+    <p>The site runs over a secure HTTPS connection. Access to the inbox and records is limited to a small number of staff, and devices and accounts are password-protected. No method of transmitting data over the internet is completely secure, but we take every reasonable step to keep your data away from anyone who shouldn't see it.</p>
+
+    <h2><span class="num">08</span>Your rights</h2>
+    <p>In relation to your data (and your child's) you have the right to:</p>
+    <ul>
+      <li>find out what data we hold about you and receive a copy;</li>
+      <li>have inaccurate data corrected;</li>
+      <li>ask for your data to be deleted;</li>
+      <li>object to processing or ask us to restrict it;</li>
+      <li>withdraw your consent at any time — this doesn't affect the lawfulness of processing before withdrawal.</li>
+    </ul>
+    <p>To exercise any of these, simply email <a href="mailto:1detskieladoshki@gmail.com">1detskieladoshki@gmail.com</a> or call us. We'll respond within a reasonable time, normally within 15 days. There's no charge.</p>
+    <p>If you're not satisfied with our answer, you can complain to the National Center for Personal Data Protection of the Republic of Moldova — contact details at <a href="https://datepersonale.md" target="_blank" rel="noopener">datepersonale.md</a>. If you're in the European Union, you may also contact the supervisory authority in your country.</p>
+
+    <h2><span class="num">09</span>Links to other sites</h2>
+    <p>This site links to our Instagram and Telegram pages and embeds a Google map. This policy doesn't cover third-party sites — their own rules apply there.</p>
+
+    <h2><span class="num">10</span>Changes to this policy</h2>
+    <p>If we ever start collecting data differently — for example by adding analytics or an advertising pixel — we'll update this page and change the date at the top. We'll flag significant changes prominently.</p>
+
+    <h2><span class="num">11</span>Questions</h2>
+    <p>Ask us if anything here is unclear — we'll explain it in plain language:</p>
+    <div class="contact-box">
+      <a href="mailto:1detskieladoshki@gmail.com">1detskieladoshki@gmail.com</a><br>
+      <a href="tel:+37368544154">+373 68 544 154</a>
+    </div>
+  </div>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="foot-bottom">
+      <span>© <span id="yr"></span> Детские Ладошки · Children's Palms</span>
+      <span><a href="/">
+        <span lang-ru>Вернуться на главную</span><span lang-ua>Повернутися на головну</span><span lang-en>Back to the site</span>
+      </a></span>
+    </div>
+  </div>
+</footer>
+
+<script>
+/* ---------- Trilingual toggle (same pattern as the main page) ---------- */
+const body=document.body;
+function setLang(l){
+  document.querySelectorAll('.lang button').forEach(x=>x.classList.toggle('active',x.dataset.lang===l));
+  body.classList.remove('lang-ua','lang-en');
+  if(l==='ua')body.classList.add('lang-ua');
+  if(l==='en')body.classList.add('lang-en');
+  document.documentElement.lang=(l==='ua')?'uk':l;
+  try{localStorage.setItem('dl-lang',l);}catch(e){}
+}
+document.querySelectorAll('.lang button').forEach(b=>b.addEventListener('click',()=>setLang(b.dataset.lang)));
+
+/* The main page links here with ?lang=…; fall back to the last language used. */
+let stored=null;
+try{stored=localStorage.getItem('dl-lang');}catch(e){}
+const asked=new URLSearchParams(location.search).get('lang');
+const start=['ru','ua','en'].includes(asked)?asked:(['ru','ua','en'].includes(stored)?stored:'ru');
+setLang(start);
+
+document.getElementById('yr').textContent=new Date().getFullYear();
+</script>
+
+</body>
+</html>

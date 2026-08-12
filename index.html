@@ -258,6 +258,8 @@ section{position:relative;padding:4.6rem 0}
 .slot:hover{border-color:var(--blue)}
 .slot.sel{background:var(--blue);border-color:var(--blue);color:#fff}
 .book-note{font-size:.82rem;color:var(--ink-soft);margin-top:1rem;font-weight:600;text-align:center}
+.book-consent{font-size:.78rem;color:var(--ink-soft);margin:1rem 0 .9rem;font-weight:600;text-align:center;line-height:1.5}
+.book-consent a{color:var(--green-deep);font-weight:800}
 .email-cta{display:inline-flex;align-items:center;gap:.55rem;background:linear-gradient(135deg,rgba(125,169,79,.16),rgba(244,162,97,.18));border:2px solid var(--green);color:var(--green-deep);font-weight:800;padding:.6rem 1.15rem;border-radius:999px;text-decoration:none;font-size:1.02rem;margin-top:.7rem;transition:transform .15s ease,box-shadow .15s ease}
 .email-cta:hover{transform:translateY(-1px);box-shadow:0 8px 20px rgba(125,169,79,.28)}
 .email-cta svg{flex:0 0 auto}
@@ -304,6 +306,8 @@ footer ul{list-style:none;display:flex;flex-direction:column;gap:.6rem}
 footer ul a{color:rgba(237,227,213,.78);font-weight:600;transition:.2s}
 footer ul a:hover{color:#fff}
 .foot-bottom{border-top:1px solid rgba(255,255,255,.12);padding-top:1.4rem;display:flex;justify-content:space-between;flex-wrap:wrap;gap:.6rem;font-size:.85rem;color:rgba(237,227,213,.55);font-weight:600}
+.foot-bottom a{color:var(--orange);text-decoration:none;font-weight:700}
+.foot-bottom a:hover{text-decoration:underline}
 .heart-made{display:inline-flex;align-items:center;gap:.4rem}
 
 /* reveal */
@@ -975,6 +979,12 @@ body.lang-en [lang-en]{display:inline}
           <textarea id="note" name="Сообщение" rows="2"></textarea>
         </div>
 
+        <p class="book-consent">
+          <span lang-ru>Отправляя заявку, вы соглашаетесь на обработку указанных данных, чтобы мы могли с вами связаться — см. <a href="/privacy.html" class="privacy-link">Политику конфиденциальности</a>.</span>
+          <span lang-ua>Надсилаючи заявку, ви погоджуєтесь на обробку зазначених даних, щоб ми могли з вами зв'язатися — див. <a href="/privacy.html" class="privacy-link">Політику конфіденційності</a>.</span>
+          <span lang-en>By sending this request you agree to us processing the details above so we can get in touch — see our <a href="/privacy.html" class="privacy-link">Privacy Policy</a>.</span>
+        </p>
+
         <button type="submit" id="bookSubmit" class="btn btn-primary" style="width:100%;justify-content:center">
           <span class="btn-idle"><span lang-ru>Отправить заявку</span><span lang-ua>Надіслати заявку</span><span lang-en>Send request</span></span>
           <span class="btn-sending" style="display:none"><span lang-ru>Отправляем…</span><span lang-ua>Надсилаємо…</span><span lang-en>Sending…</span></span>
@@ -1100,6 +1110,9 @@ body.lang-en [lang-en]{display:inline}
     </div>
     <div class="foot-bottom">
       <span>© <span id="yr"></span> Детские Ладошки · Children's Palms</span>
+      <span><a href="/privacy.html" class="privacy-link">
+        <span lang-ru>Политика конфиденциальности</span><span lang-ua>Політика конфіденційності</span><span lang-en>Privacy Policy</span>
+      </a></span>
       <span class="heart-made"><span lang-ru>Сделано с</span><span lang-ua>Зроблено з</span><span lang-en>Made with</span>
         <svg width="14" height="14" viewBox="0 0 24 24" fill="#EF9F77"><path d="M12 21s-7-4.5-7-10a4 4 0 017-2.6A4 4 0 0119 11c0 5.5-7 10-7 10z"/></svg>
         <span lang-ru>для детей Кишинёва</span><span lang-ua>для дітей Кишинева</span><span lang-en>for the children of Chișinău</span>
@@ -1126,7 +1139,14 @@ function setLang(l){
   document.querySelectorAll('#svc option').forEach(o=>{o.textContent=o.dataset[l];});
   applyAlts(l);
   renderCal();renderFaq();renderSvcFaqs();
+  syncPrivacyLinks(l);
+  try{localStorage.setItem('dl-lang',l);}catch(e){}
 }
+/* The privacy page is a separate document, so carry the chosen language over in the URL. */
+function syncPrivacyLinks(l){
+  document.querySelectorAll('a.privacy-link').forEach(a=>{a.href='/privacy.html?lang='+l;});
+}
+syncPrivacyLinks(curLang());
 /* Images carry their alt text per language in data-alt-ru/ua/en. */
 function applyAlts(l){
   document.querySelectorAll('img[data-alt-ru]').forEach(img=>{img.alt=img.dataset['alt'+l.charAt(0).toUpperCase()+l.slice(1)]||'';});
